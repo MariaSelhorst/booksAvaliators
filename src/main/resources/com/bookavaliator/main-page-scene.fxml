@@ -10,7 +10,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ToolBar accessibleRole="MENU_BAR" layoutY="-1.0" prefHeight="35.0" prefWidth="710.0">
@@ -56,6 +55,6 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Button id="btAddBook" fx:id="btAddBook" layoutX="307.0" layoutY="197.0" mnemonicParsing="false" text="Adicionar Livro" />
+      <Button id="btAddBook" fx:id="btAddBook" layoutX="307.0" layoutY="197.0" mnemonicParsing="false" onAction="#addbookpage" text="Adicionar Livro" />
    </children>
 </Pane>
