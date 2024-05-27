@@ -5,7 +5,6 @@ ID das Janelas:
 	- btAddBook (adicionar livro) - #addbookpage
 	- btSearch (pesquisar livro) - #searchBook 
 	- tbSearch (caixa de pesquisa)
-	- lbNoBooks (label quando não tem os livros pesquisados)
 
 - Avaliações (book-page-scene)
 	- btAddAva (adicionar avaliação) - #toRatingPag
