@@ -1,33 +1,35 @@
 ID das Janelas:
 
 - Pagina Inicial (main-page-scene)
-	- btAvaPag(ver avaliações)
-	- btAddBook (adicionar livro)
-	- btSearch (pesquisar livro)
+	- btAvaPag(ver avaliações) - #toAvaPag
+	- btAddBook (adicionar livro) - #addbookpage
+	- btSearch (pesquisar livro) - #searchBook 
 	- tbSearch (caixa de pesquisa)
 	- lbNoBooks (label quando não tem os livros pesquisados)
 
 - Avaliações (book-page-scene)
+	- btAddAva (adicionar avaliação) - #toRatingPag
+	- btSearch (pesquisar livro) - #searchBook
+	- tbSearch (caixa de pesquisa)
 	- lbBookTitle (Titulo do livro)
 	- lbBookAuthor (Autor do livro)
-	- btAddAva (adicionar avaliação)
-	- btSearch (pesquisar livro)
-	- tbSearch (caixa de pesquisa)
 	- lvComments (lista de avaliações/comentários)
 	- scComments (barra de rolagem da lista)
 	- ivBook (Imagem do livro)
 	
 - Adicionar Avaliação (rating-page-scene)
-	- btPublish (Publicar avaliação)
-	- cbRating (Nota de 0 a 5)
+	- btPublish (Publicar avaliação) - #addRating
+	- btSearch (pesquisar livro) - #searchBook
+	- tbSearch (caixa de pesquisa)
+	- tbNota (Nota de 0 a 5)
 	- tbUserName (nome do usuário)
 	- taComment (Área do comentário)
-	- btSearch (pesquisar livro)
-	- tbSearch (caixa de pesquisa)
 
 - Adicionar Livro (add-book-scene)
+	- btAddImg (Adicionar imagem do livro) - #addBookImg
+	- btNewBook (Adicionar novo livro) - #addNewBook
+	- btSearch (pesquisar livro) - #searchBook
+	- tbSearch (caixa de pesquisa)
 	- tbBookName (Nome do novo livro)
 	- tbBookAuthor (Autor do novo livro)
-	- btNewBook (Adicionar novo livro)
 	- imBook (Imagem do novo livro)
-	- btAddImg (Adicionar imagem do livro)

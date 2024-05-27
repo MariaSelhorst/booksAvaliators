@@ -16,7 +16,7 @@
       <ToolBar accessibleRole="MENU_BAR" layoutY="-1.0" prefHeight="35.0" prefWidth="710.0">
          <items>
             <TextField id="tbSearch" fx:id="tbSearch" prefHeight="25.0" prefWidth="206.0" />
-            <Button id="btSearch" fx:id="btSearch" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Pesquisar" />
+            <Button id="btSearch" fx:id="btSearch" mnemonicParsing="false" onAction="#searchBook" prefHeight="25.0" prefWidth="79.0" text="Pesquisar" />
             <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="335.0" text="BooksAvaliator">
                <font>
                   <Font name="Bosch Sans Regular" size="21.0" />
@@ -34,7 +34,7 @@
       </ToolBar>
       <Pane layoutX="102.0" layoutY="123.0" prefHeight="230.0" prefWidth="506.0" style="-fx-background-color: #d3d3d3;">
          <children>
-            <Button id="btNewBook" fx:id="btNewBook" layoutX="381.0" layoutY="179.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="110.0" text="Adicionar Livro">
+            <Button id="btNewBook" fx:id="btNewBook" layoutX="381.0" layoutY="179.0" mnemonicParsing="false" onAction="#addNewBook" prefHeight="37.0" prefWidth="110.0" text="Adicionar Livro">
                <font>
                   <Font size="13.0" />
                </font></Button>
@@ -52,7 +52,7 @@
             <TextField id="tbBookAuthor" fx:id="tbBookAuthor" layoutX="257.0" layoutY="78.0" prefHeight="37.0" prefWidth="235.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="204.0" layoutX="14.0" layoutY="14.0" stroke="TRANSPARENT" strokeType="INSIDE" width="154.0" />
             <ImageView id="imBook" fx:id="imBook" fitHeight="204.0" fitWidth="154.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <Button id="btAddImg" fx:id="btAddImg" layoutX="195.0" layoutY="179.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="125.0" text="Adicionar Imagem">
+            <Button id="btAddImg" fx:id="btAddImg" layoutX="195.0" layoutY="179.0" mnemonicParsing="false" onAction="#addBookImg" prefHeight="37.0" prefWidth="125.0" text="Adicionar Imagem">
                <font>
                   <Font size="13.0" />
                </font>

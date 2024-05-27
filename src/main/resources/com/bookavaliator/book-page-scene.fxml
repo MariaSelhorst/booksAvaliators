@@ -18,7 +18,7 @@
       <ToolBar accessibleRole="MENU_BAR" layoutY="-1.0" prefHeight="35.0" prefWidth="710.0">
          <items>
             <TextField id="tbSearch" fx:id="tbSearch" prefHeight="25.0" prefWidth="206.0" />
-            <Button id="btSearch" fx:id="btSearch" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Pesquisar" />
+            <Button id="btSearch" fx:id="btSearch" mnemonicParsing="false" onAction="#searchBook" prefHeight="25.0" prefWidth="79.0" text="Pesquisar" />
             <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="335.0" text="BooksAvaliator">
                <font>
                   <Font name="Bosch Sans Regular" size="21.0" />
@@ -63,7 +63,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button id="btAddAva" fx:id="btAddAva" layoutX="488.0" layoutY="358.0" mnemonicParsing="false" text="Adicionar Avaliação" />
+      <Button id="btAddAva" fx:id="btAddAva" layoutX="488.0" layoutY="358.0" mnemonicParsing="false" onAction="#toRatingPag" text="Adicionar Avaliação" />
       <ListView id="lvComments" fx:id="lvComments" layoutX="409.0" layoutY="100.0" prefHeight="245.0" prefWidth="277.0" />
       <ScrollBar id="scComments" fx:id="scComments" layoutX="668.0" layoutY="100.0" orientation="VERTICAL" prefHeight="245.0" prefWidth="18.0" />
    </children>
