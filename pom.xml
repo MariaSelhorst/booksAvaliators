@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <modelVersion>4.0.0</modelVersion>
-<groupId>com.desktopapp</groupId>
-<artifactId>desktop-app</artifactId>
+<groupId>com.bookavaliator</groupId>
+<artifactId>bookavaliator-app</artifactId>
 <version>0.1</version>
 <properties>
 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -65,7 +65,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <artifactId>exec-maven-plugin</artifactId>
 <version>3.2.0</version>
 <configuration>
-<mainClass>com.niltinho.App</mainClass>
+<mainClass>com.bookavaliator.App</mainClass>
 </configuration>
 </plugin>
 <plugin>
