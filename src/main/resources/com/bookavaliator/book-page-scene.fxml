@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ToolBar accessibleRole="MENU_BAR" layoutY="-1.0" prefHeight="35.0" prefWidth="710.0">
+         <items>
+            <TextField id="tbSearch" fx:id="tbSearch" prefHeight="25.0" prefWidth="206.0" />
+            <Button id="btSearch" fx:id="btSearch" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Pesquisar" />
+            <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="335.0" text="BooksAvaliator">
+               <font>
+                  <Font name="Bosch Sans Regular" size="21.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#235cdb" />
+                        <Stop color="#3eb0da" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </items>
+      </ToolBar>
+      <Pane layoutX="24.0" layoutY="99.0" prefHeight="296.0" prefWidth="360.0" style="-fx-background-color: #d3d3d3;">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="271.0" layoutX="14.0" layoutY="13.0" stroke="TRANSPARENT" strokeType="INSIDE" width="175.0" />
+            <Label id="lbBookTitle" fx:id="lbBookTitle" alignment="CENTER" layoutX="198.0" layoutY="22.0" prefHeight="27.0" prefWidth="154.0" text="Titulo-Livro">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label id="lbBookAuthor" fx:id="lbBookAuthor" alignment="CENTER" layoutX="198.0" layoutY="63.0" prefHeight="27.0" prefWidth="154.0" text="Autor-Livro">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ImageView id="ivBook" fx:id="ivBook" fitHeight="271.0" fitWidth="175.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Label layoutX="24.0" layoutY="49.0" prefHeight="37.0" prefWidth="182.0" text="Avaliações">
+         <font>
+            <Font name="Bosch Sans Regular" size="26.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#235cdb" />
+                  <Stop color="#3eb0da" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button id="btAddAva" fx:id="btAddAva" layoutX="488.0" layoutY="358.0" mnemonicParsing="false" text="Adicionar Avaliação" />
+      <ListView id="lvComments" fx:id="lvComments" layoutX="409.0" layoutY="100.0" prefHeight="245.0" prefWidth="277.0" />
+      <ScrollBar id="scComments" fx:id="scComments" layoutX="668.0" layoutY="100.0" orientation="VERTICAL" prefHeight="245.0" prefWidth="18.0" />
+   </children>
+</Pane>

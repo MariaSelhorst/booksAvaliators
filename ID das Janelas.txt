@@ -1,0 +1,33 @@
+ID das Janelas:
+
+- Pagina Inicial (main-page-scene)
+	- btAvaPag(ver avaliações)
+	- btAddBook (adicionar livro)
+	- btSearch (pesquisar livro)
+	- tbSearch (caixa de pesquisa)
+	- lbNoBooks (label quando não tem os livros pesquisados)
+
+- Avaliações (book-page-scene)
+	- lbBookTitle (Titulo do livro)
+	- lbBookAuthor (Autor do livro)
+	- btAddAva (adicionar avaliação)
+	- btSearch (pesquisar livro)
+	- tbSearch (caixa de pesquisa)
+	- lvComments (lista de avaliações/comentários)
+	- scComments (barra de rolagem da lista)
+	- ivBook (Imagem do livro)
+	
+- Adicionar Avaliação (rating-page-scene)
+	- btPublish (Publicar avaliação)
+	- cbRating (Nota de 0 a 5)
+	- tbUserName (nome do usuário)
+	- taComment (Área do comentário)
+	- btSearch (pesquisar livro)
+	- tbSearch (caixa de pesquisa)
+
+- Adicionar Livro (add-book-scene)
+	- tbBookName (Nome do novo livro)
+	- tbBookAuthor (Autor do novo livro)
+	- btNewBook (Adicionar novo livro)
+	- imBook (Imagem do novo livro)
+	- btAddImg (Adicionar imagem do livro)
