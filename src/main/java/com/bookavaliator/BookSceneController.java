@@ -8,26 +8,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextField;
 
-public class MainSceneController {
-
+public class BookSceneController {
+    
     public static Scene CreateScene() throws Exception {
-        URL sceneUrl = MainSceneController.class
-                .getResource("main-page-scene.fxml");
+        URL sceneUrl = BookSceneController.class
+                .getResource("book-page-scene.fxml");
         Parent root = FXMLLoader.load(sceneUrl);
         Scene scene = new Scene(root);
         return scene;
     }
 
     @FXML
-    private Button btAvaPag;
-
-    @FXML
-    private Button btAddBook;
+    private Button btAddAva;
 
     @FXML
     private Button btSearch;
@@ -36,14 +37,29 @@ public class MainSceneController {
     private TextField tbSearch;
 
     @FXML
-    protected void toAvaPag(ActionEvent e) {
-        Stage crrStage = (Stage) btAvaPag
-                .getScene().getWindow();      
+    private Label lbBookTitle;
+
+    @FXML
+    private Label lbBookAuthor;
+
+    @FXML
+    private ListView lvComments;
+
+    @FXML
+    private ScrollBar scComments;
+
+    @FXML
+    private ImageView ivBook;
+
+    @FXML
+    protected void toRatingPag(ActionEvent e){
+        Stage crrStage = (Stage) btAddAva
+                .getScene().getWindow();
         crrStage.close();
 
         try {
             Stage stage = new Stage();
-            Scene scene = BookSceneController.CreateScene();
+            Scene scene = RatingSceneController.CreateScene();
             stage.setScene(scene);
             stage.show();
 
