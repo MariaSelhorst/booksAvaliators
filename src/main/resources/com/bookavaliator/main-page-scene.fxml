@@ -31,7 +31,7 @@
             </Label>
         </items>
       </ToolBar>
-      <Pane layoutX="14.0" layoutY="99.0" prefHeight="92.0" prefWidth="334.0" style="-fx-background-color: #d3d3d3;">
+      <Pane id="BookPane" fx:id="BookPane" layoutX="14.0" layoutY="99.0" prefHeight="92.0" prefWidth="334.0" style="-fx-background-color: #d3d3d3;">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="77.0" layoutX="7.0" layoutY="8.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
             <Button id="btAvaPag" fx:id="btAvaPag" layoutX="227.0" layoutY="34.0" mnemonicParsing="false" onAction="#toAvaPag" text="Ver Avaliações" />
