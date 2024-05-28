@@ -75,4 +75,14 @@ public class BookSceneController {
             return;
         }
     }
+
+    @FXML
+    protected void searchBook(ActionEvent e) {
+        Alert alert = new Alert(
+                AlertType.NONE,
+                "pesquisado",
+                ButtonType.OK);
+        alert.showAndWait();
+        return;//modificar
+    }
 }

@@ -1,12 +1,12 @@
 ID das Janelas:
 
-- Pagina Inicial (main-page-scene)
+- Pagina Inicial (main-page-scene)-----
 	- btAvaPag(ver avaliações) - #toAvaPag
 	- btAddBook (adicionar livro) - #addbookpage
 	- btSearch (pesquisar livro) - #searchBook 
 	- tbSearch (caixa de pesquisa)
 
-- Avaliações (book-page-scene)
+- Avaliações (book-page-scene)---------
 	- btAddAva (adicionar avaliação) - #toRatingPag
 	- btSearch (pesquisar livro) - #searchBook
 	- tbSearch (caixa de pesquisa)
@@ -16,7 +16,7 @@ ID das Janelas:
 	- scComments (barra de rolagem da lista)
 	- ivBook (Imagem do livro)
 	
-- Adicionar Avaliação (rating-page-scene)
+- Adicionar Avaliação (rating-page-scene)--------
 	- btPublish (Publicar avaliação) - #addRating
 	- btSearch (pesquisar livro) - #searchBook
 	- tbSearch (caixa de pesquisa)

@@ -38,7 +38,7 @@ public class MainSceneController {
     @FXML
     protected void toAvaPag(ActionEvent e) {
         Stage crrStage = (Stage) btAvaPag
-                .getScene().getWindow();      
+                .getScene().getWindow();
         crrStage.close();
 
         try {
@@ -47,8 +47,7 @@ public class MainSceneController {
             stage.setScene(scene);
             stage.show();
 
-        } 
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Alert alert = new Alert(
                     AlertType.ERROR,
                     "Erro ao carregar a página",
@@ -59,4 +58,39 @@ public class MainSceneController {
             return;
         }
     }
+
+    @FXML
+    protected void addbookpage(ActionEvent e) {
+        Stage crrStage = (Stage) btAddBook
+                .getScene().getWindow();
+        crrStage.close();
+
+        try {
+            Stage stage = new Stage();
+            Scene scene = AddBookSceneController.CreateScene();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception ex) {
+            Alert alert = new Alert(
+                    AlertType.ERROR,
+                    "Erro ao carregar a página",
+                    ButtonType.OK);
+
+            alert.showAndWait();
+            ex.printStackTrace();
+            return;
+        }
+    }
+
+    @FXML
+    protected void searchBook(ActionEvent e) {
+        Alert alert = new Alert(
+                AlertType.NONE,
+                "pesquisado",
+                ButtonType.OK);
+        alert.showAndWait();
+        return;//modificar
+    }
+
 }

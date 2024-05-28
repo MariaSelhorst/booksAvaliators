@@ -12,25 +12,23 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollBar;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class RatingSceneController {
 
+public class AddBookSceneController {
     public static Scene CreateScene() throws Exception {
-
-        URL sceneUrl = RatingSceneController.class
-                .getResource("rating-page-scene.fxml");
+        URL sceneUrl = AddBookSceneController.class
+                .getResource("add-book-scene.fxml");
         Parent root = FXMLLoader.load(sceneUrl);
         Scene scene = new Scene(root);
         return scene;
     }
 
     @FXML
-    private Button btPublish;
+    private Button btAddImg;
+
+    @FXML
+    private Button btNewBook;
 
     @FXML
     private Button btSearch;
@@ -39,19 +37,29 @@ public class RatingSceneController {
     private TextField tbSearch;
 
     @FXML
-    private TextField tbNota;
+    private TextField tbBookName;
 
     @FXML
-    private TextField tbUsername;
+    private TextField tbBookAuthor;
 
     @FXML
-    private TextArea taComment;
+    private ImageView imBook;
 
     @FXML
-    protected void addRating(ActionEvent e) {
+    protected void addBookImg(ActionEvent e) {
         Alert alert = new Alert(
                 AlertType.NONE,
-                "comentado",
+                "imagem adicionada",
+                ButtonType.OK);
+        alert.showAndWait();
+        return;//modificar
+    }
+
+    @FXML
+    protected void addNewBook(ActionEvent e) {
+        Alert alert = new Alert(
+                AlertType.NONE,
+                "livro adicionado",
                 ButtonType.OK);
         alert.showAndWait();
         return;//modificar
@@ -66,5 +74,4 @@ public class RatingSceneController {
         alert.showAndWait();
         return;//modificar
     }
-
 }
