@@ -1,6 +1,9 @@
 package com.bookavaliator;
 
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class MainSceneController {
@@ -36,16 +41,18 @@ public class MainSceneController {
     private TextField tbSearch;
 
     @FXML
-    protected void toAvaPag(ActionEvent e) {
-        Stage crrStage = (Stage) btAvaPag
-                .getScene().getWindow();
-        crrStage.close();
+    private Label lbNoBooks;
 
+    @FXML
+    private Pane bookPane;
+
+    @FXML
+    protected void toAvaPag(ActionEvent e) {
         try {
             Stage stage = new Stage();
             Scene scene = BookSceneController.CreateScene();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
 
         } catch (Exception ex) {
             Alert alert = new Alert(
@@ -61,15 +68,11 @@ public class MainSceneController {
 
     @FXML
     protected void addbookpage(ActionEvent e) {
-        Stage crrStage = (Stage) btAddBook
-                .getScene().getWindow();
-        crrStage.close();
-
         try {
             Stage stage = new Stage();
             Scene scene = AddBookSceneController.CreateScene();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
 
         } catch (Exception ex) {
             Alert alert = new Alert(
@@ -85,12 +88,23 @@ public class MainSceneController {
 
     @FXML
     protected void searchBook(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "pesquisado",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
+        BookSearcher searcher = new BookSearcher();
+        List<Map<String, String>> result = searcher.searchBooks(tbSearch.getText());
+        
+
+        if (result.isEmpty()) {
+            lbNoBooks.setText("Nenhum livro encontrado.");
+        } else {
+            lbNoBooks.setText("");
+            displayBooks(result);
+        }
     }
 
+    private void displayBooks(List<Map<String, String>> books) {
+        bookPane.getChildren().clear();
+        for (Map<String, String> book : books) {
+            Label label = new Label(book.get("title") + " - " + book.get("author"));
+            bookPane.getChildren().add(label);
+        }
+    }
 }

@@ -18,9 +18,8 @@ public class Book {
     @Column(name = "BookAuthor")
     private String author;
 
-    @Column(name = "Reviews")
-    @OneToMany(mappedBy = "Book", cascade = CascadeType.ALL)
-    private List<Review> review;
+    // @OneToMany(mappedBy = "Book", cascade = CascadeType.ALL)
+    // private List<Review> review;
 
 
     public Long getId() {
