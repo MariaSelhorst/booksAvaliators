@@ -15,10 +15,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollBar;
-import javafx.scene.control.TextField;
 
 public class BookSceneController {
-    
+
     public static Scene CreateScene() throws Exception {
         URL sceneUrl = BookSceneController.class
                 .getResource("book-page-scene.fxml");
@@ -29,12 +28,6 @@ public class BookSceneController {
 
     @FXML
     private Button btAddAva;
-
-    @FXML
-    private Button btSearch;
-
-    @FXML
-    private TextField tbSearch;
 
     @FXML
     private Label lbBookTitle;
@@ -52,7 +45,7 @@ public class BookSceneController {
     private ImageView ivBook;
 
     @FXML
-    protected void toRatingPag(ActionEvent e){
+    protected void toRatingPag(ActionEvent e) {
         Stage crrStage = (Stage) btAddAva
                 .getScene().getWindow();
         crrStage.close();
@@ -63,8 +56,7 @@ public class BookSceneController {
             stage.setScene(scene);
             stage.show();
 
-        } 
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Alert alert = new Alert(
                     AlertType.ERROR,
                     "Erro ao carregar a página",
@@ -74,15 +66,5 @@ public class BookSceneController {
             ex.printStackTrace();
             return;
         }
-    }
-
-    @FXML
-    protected void searchBook(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "pesquisado",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
     }
 }
