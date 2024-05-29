@@ -44,7 +44,7 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <ImageView id="ivBook" fx:id="ivBook" fitHeight="271.0" fitWidth="175.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="271.0" fitWidth="175.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
       <Label layoutX="24.0" layoutY="49.0" prefHeight="37.0" prefWidth="182.0" text="Avaliações">

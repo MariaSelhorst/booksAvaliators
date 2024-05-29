@@ -1,14 +1,13 @@
 package com.bookavaliator;
 
-import org.hibernate.Transaction;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-import com.bookavaliator.model.Book;
+import com.bookavaliator.model.Review;
 
-public class Addbook {
+public class AddReview {
     private static SessionFactory sessionFactory;
     
     static {
@@ -23,14 +22,14 @@ public class Addbook {
         }
     }
 
-    public void insertBook(Book book){
+    public void insertReview(Review review){
         Session session = null;
         Transaction transaction = null;
 
         try{
-            session = sessionFactory.openSession();//
+            session = sessionFactory.openSession();
             transaction = session.beginTransaction();
-            session.save(book);
+            session.save(review);
             transaction.commit();
 
         }catch (Exception e){
@@ -46,4 +45,3 @@ public class Addbook {
         }
     }
 }
-
