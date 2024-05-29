@@ -45,10 +45,10 @@ public class AddBookSceneController {
         newBook.insertBook(novoLivro);
 
         Alert alert = new Alert(
-                    AlertType.INFORMATION,
-                    "Livro Adicionado!",
-                    ButtonType.OK);
+            AlertType.INFORMATION,
+            "Livro Adicionado!",
+            ButtonType.OK);
 
-            alert.showAndWait();    
-        }
+        alert.showAndWait();    
+    }
 }
