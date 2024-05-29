@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -101,10 +102,37 @@ public class MainSceneController {
     }
 
     private void displayBooks(List<Map<String, String>> books) {
-        bookPane.getChildren().clear();
+
+        double requiredHeight = books.size() * 50; 
+        
+        bookPane.setPrefHeight(requiredHeight);
+    
+        if (books.isEmpty()) {
+
+            bookPane.getChildren().clear();
+            bookPane.setVisible(false);
+
+        } else {
+            bookPane.setVisible(true);
+        
+            bookPane.getChildren().clear();
+
         for (Map<String, String> book : books) {
-            Label label = new Label(book.get("title") + " - " + book.get("author"));
-            bookPane.getChildren().add(label);
+            String title = book.get("title");
+            String author = book.get("author");
+    
+            // Debugging
+            System.out.println("Displaying book: " + title + " - " + author);
+    
+            VBox bookBox = new VBox();
+            bookBox.setSpacing(5); 
+    
+            Label titleLabel = new Label("Title: " + title);
+            Label authorLabel = new Label("Author: " + author);
+    
+            bookBox.getChildren().addAll(titleLabel, authorLabel);
+            bookPane.getChildren().add(bookBox);
         }
     }
+}
 }
