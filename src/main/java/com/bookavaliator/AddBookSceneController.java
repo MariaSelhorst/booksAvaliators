@@ -31,12 +31,6 @@ public class AddBookSceneController {
     private Button btNewBook;
 
     @FXML
-    private Button btSearch;
-
-    @FXML
-    private TextField tbSearch;
-
-    @FXML
     private TextField tbBookName;
 
     @FXML
@@ -60,16 +54,6 @@ public class AddBookSceneController {
         Alert alert = new Alert(
                 AlertType.NONE,
                 "livro adicionado",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
-    }
-
-    @FXML
-    protected void searchBook(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "pesquisado",
                 ButtonType.OK);
         alert.showAndWait();
         return;//modificar

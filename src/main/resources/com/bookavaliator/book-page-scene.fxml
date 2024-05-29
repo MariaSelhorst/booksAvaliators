@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -13,13 +12,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller= "com.bookavaliator.BookSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bookavaliator.BookSceneController">
    <children>
       <ToolBar accessibleRole="MENU_BAR" layoutY="-1.0" prefHeight="35.0" prefWidth="710.0">
          <items>
-            <TextField id="tbSearch" fx:id="tbSearch" prefHeight="25.0" prefWidth="206.0" />
-            <Button id="btSearch" fx:id="btSearch" mnemonicParsing="false" onAction="#searchBook" prefHeight="25.0" prefWidth="79.0" text="Pesquisar" />
-            <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="335.0" text="BooksAvaliator">
+            <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="698.0" text="BooksAvaliator">
                <font>
                   <Font name="Bosch Sans Regular" size="21.0" />
                </font>

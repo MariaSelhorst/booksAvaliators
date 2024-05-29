@@ -19,7 +19,7 @@ public class Book {
     private String author;
 
     // @OneToMany(mappedBy = "Book", cascade = CascadeType.ALL)
-    // private List<Review> review;
+    // private List<Review> review;//que isso?
 
 
     public Long getId() {
@@ -46,13 +46,13 @@ public class Book {
         this.author = author;
     }
 
-    public List<Review> getReview() {
-        return review;
-    }
+    // public List<Review> getReview() {
+    //     return review;
+    // }
 
-    public void setReview(List<Review> review) {
-        this.review = review;
-    }
+    // public void setReview(List<Review> review) {
+    //     this.review = review;
+    // }
 
     
 }
