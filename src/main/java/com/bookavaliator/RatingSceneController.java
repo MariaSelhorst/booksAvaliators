@@ -1,6 +1,9 @@
 package com.bookavaliator;
 
 import java.net.URL;
+
+import com.bookavaliator.model.Review;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,11 +46,6 @@ public class RatingSceneController {
 
     @FXML
     protected void addRating(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "comentado",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
+        
     }
 }

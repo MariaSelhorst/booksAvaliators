@@ -1,6 +1,9 @@
 package com.bookavaliator;
 
 import java.net.URL;
+
+import com.bookavaliator.model.Book;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,10 +26,7 @@ public class AddBookSceneController {
         Scene scene = new Scene(root);
         return scene;
     }
-
-    @FXML
-    private Button btAddImg;
-
+    
     @FXML
     private Button btNewBook;
 
@@ -37,25 +37,13 @@ public class AddBookSceneController {
     private TextField tbBookAuthor;
 
     @FXML
-    private ImageView imBook;
-
-    @FXML
-    protected void addBookImg(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "imagem adicionada",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
-    }
-
-    @FXML
     protected void addNewBook(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "livro adicionado",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
+        
+        Book novoLivro = new Book();
+        novoLivro.setBookTitle(tbBookName.getText());
+        novoLivro.setBookAuthor(tbBookAuthor.getText());
+
+        Addbook newBook = new Addbook();
+        newBook.insertBook(novoLivro);
     }
 }

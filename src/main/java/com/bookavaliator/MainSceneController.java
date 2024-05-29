@@ -72,7 +72,7 @@ public class MainSceneController {
             Stage stage = new Stage();
             Scene scene = AddBookSceneController.CreateScene();
             stage.setScene(scene);
-            stage.showAndWait();
+            stage.showAndWait();//
 
         } catch (Exception ex) {
             Alert alert = new Alert(
