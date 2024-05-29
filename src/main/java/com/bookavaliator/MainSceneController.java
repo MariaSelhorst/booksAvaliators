@@ -91,7 +91,6 @@ public class MainSceneController {
     protected void searchBook(ActionEvent e) {
         BookSearcher searcher = new BookSearcher();
         List<Map<String, String>> result = searcher.searchBooks(tbSearch.getText());
-        
 
         if (result.isEmpty()) {
             lbNoBooks.setText("Nenhum livro encontrado.");
@@ -103,10 +102,10 @@ public class MainSceneController {
 
     private void displayBooks(List<Map<String, String>> books) {
 
-        double requiredHeight = books.size() * 50; 
-        
+        double requiredHeight = books.size() * 50;
+
         bookPane.setPrefHeight(requiredHeight);
-    
+
         if (books.isEmpty()) {
 
             bookPane.getChildren().clear();
@@ -114,25 +113,25 @@ public class MainSceneController {
 
         } else {
             bookPane.setVisible(true);
-        
+
             bookPane.getChildren().clear();
 
-        for (Map<String, String> book : books) {
-            String title = book.get("title");
-            String author = book.get("author");
-    
-            // Debugging
-            System.out.println("Displaying book: " + title + " - " + author);
-    
-            VBox bookBox = new VBox();
-            bookBox.setSpacing(5); 
-    
-            Label titleLabel = new Label("Title: " + title);
-            Label authorLabel = new Label("Author: " + author);
-    
-            bookBox.getChildren().addAll(titleLabel, authorLabel);
-            bookPane.getChildren().add(bookBox);
+            for (Map<String, String> book : books) {
+                String title = book.get("title");
+                String author = book.get("author");
+
+                // Debugging
+                System.out.println("Displaying book: " + title + " - " + author);
+
+                VBox bookBox = new VBox();
+                bookBox.setSpacing(5);
+
+                Label titleLabel = new Label("Title: " + title);
+                Label authorLabel = new Label("Author: " + author);
+
+                bookBox.getChildren().addAll(titleLabel, authorLabel);
+                bookPane.getChildren().add(bookBox);
+            }
         }
     }
-}
 }

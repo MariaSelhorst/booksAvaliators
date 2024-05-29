@@ -26,12 +26,6 @@ public class RatingSceneController {
     private Button btPublish;
 
     @FXML
-    private Button btSearch;
-
-    @FXML
-    private TextField tbSearch;
-
-    @FXML
     private TextField tbNota;
 
     @FXML
@@ -44,15 +38,4 @@ public class RatingSceneController {
     protected void addRating(ActionEvent e) {
 
     }
-
-    @FXML
-    protected void searchBook(ActionEvent e) {
-        Alert alert = new Alert(
-                AlertType.NONE,
-                "pesquisado",
-                ButtonType.OK);
-        alert.showAndWait();
-        return;//modificar
-    }
-
 }
