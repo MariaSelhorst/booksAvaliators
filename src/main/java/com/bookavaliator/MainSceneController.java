@@ -22,8 +22,7 @@ import javafx.scene.control.TextField;
 public class MainSceneController {
 
     public static Scene CreateScene() throws Exception {
-        URL sceneUrl = MainSceneController.class
-                .getResource("main-page-scene.fxml");
+        URL sceneUrl = MainSceneController.class.getResource("main-page-scene.fxml");
         Parent root = FXMLLoader.load(sceneUrl);
         Scene scene = new Scene(root);
         return scene;
@@ -48,24 +47,24 @@ public class MainSceneController {
     private Pane bookPane;
 
     @FXML
-    protected void toAvaPag(ActionEvent e) {
+    private VBox bookContainer;
+
+    @FXML
+    protected void toAvaPag(ActionEvent e, String bookId) {
+        System.out.println("Book ID: " + bookId);
+        
         try {
             Stage stage = new Stage();
-            Scene scene = BookSceneController.CreateScene();
+            Scene scene = BookSceneController.CreateScene(bookId);
             stage.setScene(scene);
             stage.showAndWait();
-
         } catch (Exception ex) {
-            Alert alert = new Alert(
-                    AlertType.ERROR,
-                    "Erro ao carregar a página",
-                    ButtonType.OK);
-
+            Alert alert = new Alert(AlertType.ERROR, "Erro ao carregar a página", ButtonType.OK);
             alert.showAndWait();
             ex.printStackTrace();
-            return;
         }
     }
+    
 
     @FXML
     protected void addbookpage(ActionEvent e) {
@@ -74,16 +73,10 @@ public class MainSceneController {
             Scene scene = AddBookSceneController.CreateScene();
             stage.setScene(scene);
             stage.showAndWait();
-
         } catch (Exception ex) {
-            Alert alert = new Alert(
-                    AlertType.ERROR,
-                    "Erro ao carregar a página",
-                    ButtonType.OK);
-
+            Alert alert = new Alert(AlertType.ERROR, "Erro ao carregar a página", ButtonType.OK);
             alert.showAndWait();
             ex.printStackTrace();
-            return;
         }
     }
 
@@ -101,36 +94,36 @@ public class MainSceneController {
     }
 
     private void displayBooks(List<Map<String, String>> books) {
-
-        double requiredHeight = books.size() * 50;
-
-        bookPane.setPrefHeight(requiredHeight);
-
         if (books.isEmpty()) {
-
-            bookPane.getChildren().clear();
             bookPane.setVisible(false);
-
+            bookPane.setManaged(false);
         } else {
             bookPane.setVisible(true);
+            bookPane.setManaged(true);
 
-            bookPane.getChildren().clear();
+            bookContainer.getChildren().clear();
 
             for (Map<String, String> book : books) {
                 String title = book.get("title");
                 String author = book.get("author");
-
-                // Debugging
-                System.out.println("Displaying book: " + title + " - " + author);
+                String bookId = book.get("id");
 
                 VBox bookBox = new VBox();
                 bookBox.setSpacing(5);
+                bookBox.setStyle("-fx-background-color: white; -fx-padding: 10; -fx-border-color: gray; -fx-border-width: 1;");
+                bookBox.setPrefSize(300, 100);
 
                 Label titleLabel = new Label("Title: " + title);
+                titleLabel.setWrapText(true);
+                titleLabel.setPrefWidth(280);
+
                 Label authorLabel = new Label("Author: " + author);
 
-                bookBox.getChildren().addAll(titleLabel, authorLabel);
-                bookPane.getChildren().add(bookBox);
+                Button reviewButton = new Button("Ver Avaliações");
+                reviewButton.setOnAction(event -> toAvaPag(event, bookId));
+
+                bookBox.getChildren().addAll(titleLabel, authorLabel, reviewButton);
+                bookContainer.getChildren().add(bookBox);
             }
         }
     }

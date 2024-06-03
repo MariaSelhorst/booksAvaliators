@@ -18,10 +18,20 @@ import javafx.scene.control.ScrollBar;
 
 public class BookSceneController {
 
-    public static Scene CreateScene() throws Exception {
-        URL sceneUrl = BookSceneController.class
-                .getResource("book-page-scene.fxml");
-        Parent root = FXMLLoader.load(sceneUrl);
+    private String bookId;
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public static Scene CreateScene(String bookId) throws Exception {
+        URL sceneUrl = BookSceneController.class.getResource("book-page-scene.fxml");
+        FXMLLoader loader = new FXMLLoader(sceneUrl);
+        Parent root = loader.load();
+
+        BookSceneController controller = loader.getController();
+        controller.setBookId(bookId);
+
         Scene scene = new Scene(root);
         return scene;
     }
@@ -52,7 +62,7 @@ public class BookSceneController {
 
         try {
             Stage stage = new Stage();
-            Scene scene = RatingSceneController.CreateScene();
+            Scene scene = RatingSceneController.CreateScene(bookId);
             stage.setScene(scene);
             stage.show();
 
