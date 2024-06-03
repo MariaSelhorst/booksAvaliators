@@ -36,7 +36,7 @@ public class BookSceneController {
     private Label lbBookAuthor;
 
     @FXML
-    private ListView lvComments;
+    private ListView<String> lvComments;
 
     @FXML
     private ScrollBar scComments;

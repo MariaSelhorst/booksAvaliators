@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BookSearcher {
+    
     public List<Map<String, String>> searchBooks(String filter) {
         Session session = HibernateUtil
             .getSessionFactory()
