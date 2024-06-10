@@ -3,9 +3,9 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://CT-C-001YJ\SQLEXPRESS;databaseName=bookavaliator;integratedSecurity=true;encrypt=true;trustServerCertificate=true</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://CA-C0064W\SQLEXPRESS;databaseName=bookavaliator;integratedSecurity=true;encrypt=true;trustServerCertificate=true</property>
         <property name="hibernate.connection.integratedSecurity">true</property>
-        <property name="java.library.path">C:\Program Files\sqljdbc_12.6\ptb\auth\x64\mssql-jdbc_auth-12.6.1.x64.dll</property>
+        <property name="java.library.path">C:\Users\disrct\Desktop\Madu\Projeto\sqljdbc_12.6\ptb\auth\x64\mssql-jdbc_auth-12.6.1.x64.dll</property>
         <!-- JDBC connection pool settings -->
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>

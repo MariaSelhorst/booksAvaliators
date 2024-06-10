@@ -54,53 +54,53 @@ public class RatingSceneController {
     @FXML
     private TextArea taComment;
 
-    @FXML
-    protected void addRating(ActionEvent e) {
-        String userName = tbUsername.getText();
-        String nota = tbNota.getText();
-        String comment = taComment.getText();
+//     @FXML
+//     protected void addRating(ActionEvent e) {
+//         String userName = tbUsername.getText();
+//         String nota = tbNota.getText();
+//         String comment = taComment.getText();
 
-        if (!userName.isEmpty() && !nota.isEmpty() && !comment.isEmpty()) {
-            // Obtém o livro correspondente ao ID do livro passado para a cena de avaliação
-            Long id = Long.parseLong(bookId);
-            Book livro = BookService.getBookById(id);
+//         if (!userName.isEmpty() && !nota.isEmpty() && !comment.isEmpty()) {
+//             // Obtém o livro correspondente ao ID do livro passado para a cena de avaliação
+//             Long id = Long.parseLong(bookId);
+//             Book livro = BookService.getBookById(id);
             
-            // Se a revisão ainda não foi criada, crie uma nova
-            if (review == null) {
-                review = new Review();
-            }
+//             // Se a revisão ainda não foi criada, crie uma nova
+//             if (review == null) {
+//                 review = new Review();
+//             }
             
-            // Preencha os detalhes da revisão
-            review.setComment(comment);
-            review.setRating(Integer.parseInt(nota));
-            review.setBook(livro);
+//             // Preencha os detalhes da revisão
+//             review.setComment(comment);
+//             review.setRating(Integer.parseInt(nota));
+//             review.setBook(livro);
 
-            EntityManager entityManager = EntityManagerUtil.getEntityManager();
-            EntityTransaction transaction = entityManager.getTransaction();
-            try {
-                transaction.begin();
-                entityManager.persist(review);
-                transaction.commit();
+//             EntityManager entityManager = EntityManagerUtil.getEntityManager();
+//             EntityTransaction transaction = entityManager.getTransaction();
+//             try {
+//                 transaction.begin();
+//                 entityManager.persist(review);
+//                 transaction.commit();
                 
-                Alert alert = new Alert(AlertType.INFORMATION, "Avaliação adicionada com sucesso!", ButtonType.OK);
-                alert.showAndWait();
-            } catch (Exception ex) {
-                if (transaction != null && transaction.isActive()) {
-                    transaction.rollback();
-                }
+//                 Alert alert = new Alert(AlertType.INFORMATION, "Avaliação adicionada com sucesso!", ButtonType.OK);
+//                 alert.showAndWait();
+//             } catch (Exception ex) {
+//                 if (transaction != null && transaction.isActive()) {
+//                     transaction.rollback();
+//                 }
                 
-                Alert alert = new Alert(AlertType.ERROR, "Erro ao adicionar avaliação.", ButtonType.OK);
-                alert.showAndWait();
-                ex.printStackTrace();
-            } finally {
-                entityManager.close();
-            }
+//                 Alert alert = new Alert(AlertType.ERROR, "Erro ao adicionar avaliação.", ButtonType.OK);
+//                 alert.showAndWait();
+//                 ex.printStackTrace();
+//             } finally {
+//                 entityManager.close();
+//             }
 
-            // Feche a janela após adicionar a avaliação
-            ((Stage) btPublish.getScene().getWindow()).close();
-        } else {
-            Alert alert = new Alert(AlertType.ERROR, "Por favor, preencha todos os campos.", ButtonType.OK);
-            alert.showAndWait();
-        }
-    }
+//             // Feche a janela após adicionar a avaliação
+//             ((Stage) btPublish.getScene().getWindow()).close();
+//         } else {
+//             Alert alert = new Alert(AlertType.ERROR, "Por favor, preencha todos os campos.", ButtonType.OK);
+//             alert.showAndWait();
+//         }
+//     }
 }
